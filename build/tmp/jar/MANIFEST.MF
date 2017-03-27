@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-MainApp: kr.or.dgit.erp_luuzun.MainApp
-Title: SoftWareERPApp
-Version: 1.0
-

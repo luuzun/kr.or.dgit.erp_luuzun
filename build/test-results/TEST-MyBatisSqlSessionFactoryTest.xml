@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MyBatisSqlSessionFactoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-03-27T02:02:23" hostname="DESKTOP-RRIPOHD" time="0.02">
-  <properties/>
-  <testcase name="testSqlSession" classname="MyBatisSqlSessionFactoryTest" time="0.02"/>
-  <system-out><![CDATA[SqlSessionFactory Created!
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
