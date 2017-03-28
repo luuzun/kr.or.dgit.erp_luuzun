@@ -9,14 +9,17 @@ import javax.swing.JPanel;
 import erp_myframework.CheckBoxPanel;
 import erp_myframework.ComboPanel;
 import erp_myframework.TextFiledPanel;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JCheckBox;
 
 public class viewSale extends JPanel {
 	public viewSale() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{200, 200};
-		gridBagLayout.rowHeights = new int[]{70, 70, 70};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0};
+		gridBagLayout.rowHeights = new int[]{70, 70, 70, 0, 0};
+		gridBagLayout.columnWeights = new double[]{1.0, 0.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0};
 		setLayout(gridBagLayout);
 		
 		TextFiledPanel panel = new TextFiledPanel();
@@ -32,7 +35,7 @@ public class viewSale extends JPanel {
 		panel_2.setTitle("주문일자");
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
 		gbc_panel_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_2.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_2.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_2.gridx = 1;
 		gbc_panel_2.gridy = 0;
 		add(panel_2, gbc_panel_2);
@@ -49,7 +52,7 @@ public class viewSale extends JPanel {
 		ComboPanel panel_3 = new ComboPanel();
 		panel_3.setTitle("고객상호명");
 		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
-		gbc_panel_3.insets = new Insets(0, 0, 5, 5);
+		gbc_panel_3.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_3.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel_3.gridx = 1;
 		gbc_panel_3.gridy = 1;
@@ -67,10 +70,28 @@ public class viewSale extends JPanel {
 		CheckBoxPanel panel_5 = new CheckBoxPanel();
 		panel_5.setTitle("입금여부");
 		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
+		gbc_panel_5.insets = new Insets(0, 0, 5, 0);
 		gbc_panel_5.fill = GridBagConstraints.HORIZONTAL;
 		gbc_panel_5.gridx = 1;
 		gbc_panel_5.gridy = 2;
 		add(panel_5, gbc_panel_5);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("New check box");
+		panel_5.getpValue().add(chckbxNewCheckBox);
+		
+		JButton btnNewButton = new JButton("New button");
+		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton.gridx = 0;
+		gbc_btnNewButton.gridy = 3;
+		add(btnNewButton, gbc_btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
+		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_1.gridx = 1;
+		gbc_btnNewButton_1.gridy = 3;
+		add(btnNewButton_1, gbc_btnNewButton_1);
 
 	}
 

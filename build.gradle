@@ -25,6 +25,7 @@ dependencies {
 	
 	compile files('src/main/resources/erp_myframework.jar')
 	compile files('src/main/resources/syntheticaAluOxide.jar')
+	compile files('src/main/resources/synthetica.jar')
 }
 
 jar {
