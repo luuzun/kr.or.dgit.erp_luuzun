@@ -98,9 +98,6 @@ public class MainApp extends JFrame implements ActionListener {
 		
 		JButton btnExit = new JButton("Exit");
 		panelButton.add(btnExit);
-		
-		ContentSale cs = new ContentSale();
-		cs.createScene();
 	}
 	
 

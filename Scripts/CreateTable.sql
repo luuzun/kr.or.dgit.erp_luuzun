@@ -88,7 +88,7 @@ CREATE TABLE sale (
 );
 
 #### Create View View_Sale_Detail####
-CREATE VIEW view_sale_detail AS;
+CREATE VIEW view_sale_detail AS
 	SELECT sale_code,
 /*총판매금액*/	sale_price * sale_amount AS total_sale_price,
 /*총공급금액*/	supply_price * sale_amount AS total_supply_price,
@@ -97,15 +97,3 @@ CREATE VIEW view_sale_detail AS;
 /*총납품금액*/	((sale_price * sale_amount) * 0.1) + (sale_price * sale_amount) AS tax_saleprice,
 /*미수금*/		(sale_price * sale_amount) * !isDeposit AS receivablePrice
 	FROM sale;
-SELECT * FROM view_sale_detail;
-	SELECT * FROM sale;
-SELECT sale_code,
-/*총판매금액*/	@total_saleprice   := sale_price * sale_amount total_sale_price,
-/*총공급금액*/	@total_supplyprice := supply_price * sale_amount,
-/*마진액*/		@margin			   := @total_saleprice - @total_supplyprice, 	
-/*세금*/		@tax 			   := @total_saleprice * 0.1 tax,
-/*총납품금액*/	@tax_saleprice 	   := @tax + @total_saleprice tax_saleprice,
-/*미수금*/		@receivable 	   := @total_salePrice * !isDeposit receivablePrice
-	FROM sale;
-
-SHOW tables;
