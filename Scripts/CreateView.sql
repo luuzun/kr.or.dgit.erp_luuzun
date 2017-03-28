@@ -12,7 +12,7 @@ CREATE VIEW view_sale_detail AS
 #### 고객별 판매현황조회 ####
 -- 고객상호명 품목명 주문수량 입금여부 단가 매출금 미수금
 CREATE VIEW view_client_sale AS 
-SELECT cl.clnt_code,cl.clnt_name, sw.sw_name, s.sale_amount, s.isdeposit, s.sale_price,
+SELECT cl.clnt_code, cl.clnt_name, sw.sw_name, s.sale_amount, s.isdeposit, s.sale_price,
 /*매출금*/	sd.total_sale_price, 
 /*미수금*/	sd.receivablePrice
 	FROM client cl JOIN sale s ON cl.clnt_code = s.clnt_code 
@@ -36,11 +36,11 @@ SELECT DISTINCT s.sale_code, s.sw_code, sw.sw_name, c.group_name, sc.comp_name,
 				JOIN delivery del ON del.sw_code= sw.sw_code
 				JOIN supply_company sc ON del.comp_code= sc.comp_code;
   
-SELECT sw_code, sw_name, group_name, comp_name, total_supply_price, total_price, margin 
+SELECT sw_name, group_name, comp_name, total_supply_price, total_price, margin 
 	FROM view_sw_sale 
 	WHERE sw_code="SW001";
 	
-SELECT sw_code, sw_name, group_name, comp_name, total_supply_price, total_price, margin 
+SELECT sw_name, group_name, comp_name, total_supply_price, total_price, margin 
 	FROM view_sw_sale 
 	WHERE sw_code=#{swCode};
 
@@ -77,7 +77,8 @@ SELECT c.group_code, c.group_name,
                JOIN view_sale_detail sd ON sd.sale_code = s.sale_code
    GROUP BY c.group_name;
 
-SELECT * FROM view_sale_by_category;
+SELECT group_name, c_salePrice, c_amount 
+	FROM view_sale_by_category;
 
 
 #### SW 전체판매현황 보고서 ####
@@ -120,7 +121,7 @@ SELECT comp_name, order_date, clnt_name, sw_name, sale_price, sale_amount, total
 -- 총납품금액 합계
 
 SELECT SUM(tax_saleprice) 
-	FROM view_sale_detail;
+	FROM view_bill_list;
 
 
 #### 그래프출력 ####

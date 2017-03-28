@@ -1,6 +1,7 @@
 package kr.or.dgit.erp_luuzun.dto;
 
-public class SoftwareSale {
+public class SalebySW {
+	//소프트웨어별 판매현황
 	private String swName;
 	private String groupName;
 	private String compName;

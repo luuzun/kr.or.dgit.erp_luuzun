@@ -1,6 +1,6 @@
 package kr.or.dgit.erp_luuzun.dto;
 
-public class zClientSale {
+public class SaleByClient{
 	private String clntName;
 	private String swName;
 	private int saleAmount;
