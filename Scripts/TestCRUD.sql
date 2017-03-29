@@ -185,10 +185,13 @@ UPDATE delivery SET del_isExist=#{delIsExist}
 ################################# Sale ################################
 
 -- 전체검색
-SELECT sale_code, clnt_code,sw_code, sale_amount, supply_price, sale_price, isdeposit, order_date, sale_isExist 
+SELECT sale_code, clnt_code, sw_code, sale_amount, supply_price, sale_price, isdeposit, order_date, sale_isExist 
 	FROM sale;
 
-
+SELECT sale_code, s.clnt_code, c.clnt_name, s.sw_code, sw.sw_name, sale_amount, s.supply_price, s.sale_price, isdeposit, order_date, sale_isExist 
+	FROM sale s JOIN client c ON c.clnt_code = s.clnt_code
+				JOIN software sw ON sw.sw_code = s.sw_code;
+	
 -- 번호검색
 SELECT sale_code, clnt_code,sw_code, sale_amount, supply_price, sale_price, isdeposit ,order_date, sale_isExist
 	FROM sale 

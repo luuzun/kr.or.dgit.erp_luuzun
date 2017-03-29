@@ -1,4 +1,4 @@
-package kr.or.dgit.erp_luuzun;
+package kr.or.dgit.erp_luuzun.view;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 
 import kr.or.dgit.erp_luuzun.content.ContentSale;
-import kr.or.dgit.erp_luuzun.view.ViewSale;
 
 public class TabbedSale extends JFrame {
 
