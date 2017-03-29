@@ -4,9 +4,12 @@ import java.util.Date;
 
 public class TradeSaleList {
 	//거래명세서
+	private String compCode;
 	private String compName;
 	private Date orderDate;
+	private String clntCode;
 	private String clntName;
+	private String swCode;
 	private String swName;
 	private int salePrice;
 	private int saleAmount;
