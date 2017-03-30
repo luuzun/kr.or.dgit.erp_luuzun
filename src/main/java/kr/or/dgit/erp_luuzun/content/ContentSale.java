@@ -33,60 +33,58 @@ public class ContentSale extends JPanel {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);
 		
-		TextFiledPanel panel = new TextFiledPanel();
-		panel.setTitle("주문번호");
-		GridBagConstraints gbc_panel = new GridBagConstraints(); 
-		gbc_panel.fill = GridBagConstraints.HORIZONTAL; 
-		gbc_panel.insets = new Insets(0, 0, 0, 0);
-		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 0;
-		add(panel, gbc_panel);
+		TextFiledPanel tfpSaleCode = new TextFiledPanel();
+		tfpSaleCode.setTitle("주문번호");
+		GridBagConstraints gbc_tfpSaleCode = new GridBagConstraints(); 
+		gbc_tfpSaleCode.fill = GridBagConstraints.HORIZONTAL; 
+		gbc_tfpSaleCode.insets = new Insets(0, 0, 0, 0);
+		gbc_tfpSaleCode.gridx = 0;
+		gbc_tfpSaleCode.gridy = 0;
+		add(tfpSaleCode, gbc_tfpSaleCode);
 		
-		ComboPanel panel_4 = new ComboPanel();
-		panel_4.setTitle("품목명");
-		GridBagConstraints gbc_panel_4 = new GridBagConstraints();
-		gbc_panel_4.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_4.insets = new Insets(0, 0, 0, 0);
-		gbc_panel_4.gridx = 1;
-		gbc_panel_4.gridy = 0;
-		add(panel_4, gbc_panel_4);
+		ComboPanel tfpSwName = new ComboPanel();
+		tfpSwName.setTitle("품목명");
+		GridBagConstraints gbc_tfpSwName = new GridBagConstraints();
+		gbc_tfpSwName.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfpSwName.insets = new Insets(0, 0, 0, 0);
+		gbc_tfpSwName.gridx = 1;
+		gbc_tfpSwName.gridy = 0;
+		add(tfpSwName, gbc_tfpSwName);
 		
-		TextFiledPanel panel_1 = new TextFiledPanel();
-		panel_1.setTitle("주문수량");
-		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_1.insets = new Insets(0, 0, 0, 0);
-		gbc_panel_1.gridx = 0;
-		gbc_panel_1.gridy = 1;
-		add(panel_1, gbc_panel_1);
+		TextFiledPanel tfpSaleAmount = new TextFiledPanel();
+		tfpSaleAmount.setTitle("주문수량");
+		GridBagConstraints gbc_tfpSaleAmount = new GridBagConstraints();
+		gbc_tfpSaleAmount.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfpSaleAmount.insets = new Insets(0, 0, 0, 0);
+		gbc_tfpSaleAmount.gridx = 0;
+		gbc_tfpSaleAmount.gridy = 1;
+		add(tfpSaleAmount, gbc_tfpSaleAmount);
 		
-		ComboPanel panel_3 = new ComboPanel();
-		panel_3.setTitle("고객상호명");
-		GridBagConstraints gbc_panel_3 = new GridBagConstraints();
-		gbc_panel_3.insets = new Insets(0, 0, 0, 0);
-		gbc_panel_3.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_3.gridx = 1;
-		gbc_panel_3.gridy = 1;
-		add(panel_3, gbc_panel_3);
+		ComboPanel tfpClntName = new ComboPanel();
+		tfpClntName.setTitle("고객상호명");
+		GridBagConstraints gbc_tfpClntName = new GridBagConstraints();
+		gbc_tfpClntName.insets = new Insets(0, 0, 0, 0);
+		gbc_tfpClntName.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfpClntName.gridx = 1;
+		gbc_tfpClntName.gridy = 1;
+		add(tfpClntName, gbc_tfpClntName);
 		
-		TextFiledPanel panel_2 = new TextFiledPanel();
-		panel_2.setTitle("주문일자");
-		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
-		gbc_panel_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_2.insets = new Insets(0, 0, 0, 0);
-		gbc_panel_2.gridx = 0;
-		gbc_panel_2.gridy = 2;
-		add(panel_2, gbc_panel_2);
+		TextFiledPanel tfpOrderDate = new TextFiledPanel();
+		tfpOrderDate.setTitle("주문일자");
+		GridBagConstraints gbc_tfpOrderDate = new GridBagConstraints();
+		gbc_tfpOrderDate.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfpOrderDate.insets = new Insets(0, 0, 0, 0);
+		gbc_tfpOrderDate.gridx = 0;
+		gbc_tfpOrderDate.gridy = 2;
+		add(tfpOrderDate, gbc_tfpOrderDate);
 		
-		CheckBoxPanel panel_5 = new CheckBoxPanel();
-		panel_5.setTitle("입금여부");
-		GridBagConstraints gbc_panel_5 = new GridBagConstraints();
-		gbc_panel_5.insets = new Insets(0, 0, 0, 0);
-		gbc_panel_5.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_5.gridx = 1;
-		gbc_panel_5.gridy = 2;
-		add(panel_5, gbc_panel_5);
-		
-		
+		CheckBoxPanel tfpIsExist = new CheckBoxPanel();
+		tfpIsExist.setTitle("입금여부");
+		GridBagConstraints gbc_tfpIsExist = new GridBagConstraints();
+		gbc_tfpIsExist.insets = new Insets(0, 0, 0, 0);
+		gbc_tfpIsExist.fill = GridBagConstraints.HORIZONTAL;
+		gbc_tfpIsExist.gridx = 1;
+		gbc_tfpIsExist.gridy = 2;
+		add(tfpIsExist, gbc_tfpIsExist);
 	}
 }

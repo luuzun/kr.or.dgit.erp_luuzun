@@ -15,7 +15,5 @@ public class TableSale extends JPanel {
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
-	}
-	
-	
+	}	
 }

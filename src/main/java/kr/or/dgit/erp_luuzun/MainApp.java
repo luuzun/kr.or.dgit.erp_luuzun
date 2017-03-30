@@ -24,6 +24,7 @@ import erp_myframework.TextFiledPanel;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import kr.or.dgit.erp_luuzun.content.ContentSale;
+import kr.or.dgit.erp_luuzun.view.TabbedSale;
 
 @SuppressWarnings("serial")
 public class MainApp extends JFrame implements ActionListener {
