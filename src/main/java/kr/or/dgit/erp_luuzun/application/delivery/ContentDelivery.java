@@ -16,14 +16,13 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 public class ContentDelivery extends JPanel {
-	private static final String pattern = "dd-MMM-yy";
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	public ContentDelivery() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {200, 200, 50};
-		gridBagLayout.rowHeights = new int[]{30, 30, 30};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0};
+		gridBagLayout.rowHeights = new int[]{30, 30, 30, 30};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);
 		

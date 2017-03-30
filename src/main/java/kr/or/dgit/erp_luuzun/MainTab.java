@@ -14,30 +14,19 @@ import javax.swing.border.EmptyBorder;
 import kr.or.dgit.erp_luuzun.application.delivery.ViewDelivery;
 import kr.or.dgit.erp_luuzun.application.sales.ViewSale;
 import kr.or.dgit.erp_luuzun.application.showlist.ViewList;
+import kr.or.dgit.erp_luuzun.application.software.ViewSoftware;
+import kr.or.dgit.erp_luuzun.application.supplycompany.ViewSupplyCompany;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class MainTab extends JFrame {
+public class MainTab extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainTab frame = new MainTab();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JButton btnSupplyComp;
+	private JButton btnSoftWare;
+	private JButton btnClient;
 
 	public MainTab() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,17 +70,16 @@ public class MainTab extends JFrame {
 		JPanel pButton = new JPanel();
 		contentPane.add(pButton, BorderLayout.NORTH);
 		
-		JButton btnSupplyComp = new JButton("공급사 관리");
-		btnSupplyComp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		btnSupplyComp = new JButton("공급사 관리");
+		btnSupplyComp.addActionListener(this);
 		pButton.add(btnSupplyComp);
 		
-		JButton btnSoftWare = new JButton("S/W 관리");
+		btnSoftWare = new JButton("S/W 관리");
+		btnSoftWare.addActionListener(this);
 		pButton.add(btnSoftWare);
 		
-		JButton btnClient = new JButton("고객 관리");
+		btnClient = new JButton("고객 관리");
+		btnClient.addActionListener(this);
 		pButton.add(btnClient);
 		
 		JButton btnChart = new JButton("통계차트");
@@ -99,5 +87,28 @@ public class MainTab extends JFrame {
 		
 		JButton btnReport = new JButton("보고서");
 		pButton.add(btnReport);
+		
+		setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnClient) {
+			actionPerformedBtnClient(e);
+		}
+		if (e.getSource() == btnSoftWare) {
+			actionPerformedBtnSoftWare(e);
+		}
+		if (e.getSource() == btnSupplyComp) {
+			actionPerformedBtnSupplyComp(e);
+		}
+	}
+	protected void actionPerformedBtnSupplyComp(ActionEvent e) {
+		ViewSupplyCompany viewSupplyCompany = new ViewSupplyCompany(); 
+	}
+	protected void actionPerformedBtnSoftWare(ActionEvent e) {
+		ViewSoftware viewSoftware = new ViewSoftware();
+	}
+	
+	protected void actionPerformedBtnClient(ActionEvent e) {
 	}
 }

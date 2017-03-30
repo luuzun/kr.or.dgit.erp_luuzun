@@ -82,9 +82,5 @@ public class ContentList extends JPanel{
 		gbc_btnGroupAllFind.gridx = 1;
 		gbc_btnGroupAllFind.gridy = 3;
 		add(btnGroupAllFind, gbc_btnGroupAllFind);
-		
-	
 	}
-	
-	
 }

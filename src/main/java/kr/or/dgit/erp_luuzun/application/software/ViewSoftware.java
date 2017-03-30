@@ -1,14 +1,26 @@
-package kr.or.dgit.erp_luuzun.application.sales;
+package kr.or.dgit.erp_luuzun.application.software;
 
-import javax.swing.JPanel;
-import java.awt.GridBagLayout;
+import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.GridLayout;
-import javax.swing.JButton;
 
-public class ViewSale extends JPanel {
-	public ViewSale() {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+@SuppressWarnings("serial")
+public class ViewSoftware extends JFrame {
+	private JPanel contentPane;
+	public ViewSoftware() {
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		setBounds(100, 100, 450, 750);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0}; //각 열의 최소 넓이  
 		gridBagLayout.rowHeights = new int[]{0, 0, 0}; //각 행의 최소 넓이
@@ -16,7 +28,7 @@ public class ViewSale extends JPanel {
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0}; //각 행의 가중치
 		setLayout(gridBagLayout);
 		
-		ContentSale pContent = new ContentSale();
+		ContentSoftware pContent = new ContentSoftware();
 		GridBagConstraints gbc_pContent = new GridBagConstraints();
 		gbc_pContent.insets = new Insets(10, 10, 10, 10);
 		gbc_pContent.fill = GridBagConstraints.NONE;
@@ -35,7 +47,7 @@ public class ViewSale extends JPanel {
 		GridBagLayout gbl_pButton = new GridBagLayout();
 		gbl_pButton.columnWidths = new int[] {100, 100, 100};
 		gbl_pButton.rowHeights = new int[]{55, 0};
-		gbl_pButton.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_pButton.columnWeights = new double[]{0.0, 0.0, 0.0};
 		gbl_pButton.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		pButton.setLayout(gbl_pButton);
 		
@@ -62,11 +74,14 @@ public class ViewSale extends JPanel {
 		gbc_btnDelete.gridy = 0;
 		pButton.add(btnDelete, gbc_btnDelete);
 		
-		TableSale pTable = new TableSale();
+		TableSoftware pTable = new TableSoftware();
 		GridBagConstraints gbc_pTable = new GridBagConstraints();
 		gbc_pTable.fill = GridBagConstraints.BOTH;
 		gbc_pTable.gridx = 0;
 		gbc_pTable.gridy = 2;
 		add(pTable, gbc_pTable);
+
+		setVisible(true);
 	}
+
 }

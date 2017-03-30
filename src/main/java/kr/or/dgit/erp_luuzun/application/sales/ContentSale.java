@@ -29,7 +29,7 @@ public class ContentSale extends JPanel {
 	public ContentSale() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {200, 200, 50};
-		gridBagLayout.rowHeights = new int[]{30, 30, 30};
+		gridBagLayout.rowHeights = new int[]{30, 30, 30, 30};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);

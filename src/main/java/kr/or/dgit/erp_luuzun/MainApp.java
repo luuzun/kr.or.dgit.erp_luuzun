@@ -100,8 +100,6 @@ public class MainApp extends JFrame implements ActionListener {
 		panelButton.add(btnExit);
 	}
 	
-
-	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnLogIn) {
 			actionPerformedBtnLogIn(e);
@@ -110,6 +108,6 @@ public class MainApp extends JFrame implements ActionListener {
 	
 	protected void actionPerformedBtnLogIn(ActionEvent e) {
 		MainTab tabbedSale = new MainTab();
-		tabbedSale.setVisible(true);
+		dispose();
 	}
 }

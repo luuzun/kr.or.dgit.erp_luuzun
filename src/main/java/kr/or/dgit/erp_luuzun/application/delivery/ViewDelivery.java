@@ -68,7 +68,5 @@ public class ViewDelivery extends JPanel{
 		gbc_pTable.gridx = 0;
 		gbc_pTable.gridy = 2;
 		add(pTable, gbc_pTable);
-
 	}
-
 }
