@@ -30,7 +30,7 @@ public class MainTab extends JFrame implements ActionListener {
 
 	public MainTab() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 836, 532);
+		setBounds(100, 100, 730, 800);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);

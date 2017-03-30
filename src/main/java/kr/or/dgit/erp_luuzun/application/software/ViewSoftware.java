@@ -29,11 +29,11 @@ public class ViewSoftware extends JFrame {
 		gridBagLayout.rowHeights = new int[]{0, 0, 0}; //각 행의 최소 넓이
 		gridBagLayout.columnWeights = new double[]{1.0, Double.MIN_VALUE}; //각 열의 가중치
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0}; //각 행의 가중치
-		setLayout(gridBagLayout);
+		getContentPane().setLayout(gridBagLayout);
 		
 		JLabel label = new JLabel("소프트웨어 관리");
 		label.setEnabled(false);
-		label.setHorizontalAlignment(SwingConstants.LEFT);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("\uC778\uD130\uD30C\uD06C\uACE0\uB515 B", label.getFont().getStyle(), label.getFont().getSize() + 5));
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.fill = GridBagConstraints.HORIZONTAL;
@@ -41,7 +41,7 @@ public class ViewSoftware extends JFrame {
 		gbc_label.gridx = 0;
 		gbc_label.gridy = 0;
 		gbc_label.gridwidth = 5;
-		add(label, gbc_label);
+		getContentPane().add(label, gbc_label);
 		
 		ContentSoftware pContent = new ContentSoftware();
 		GridBagConstraints gbc_pContent = new GridBagConstraints();
@@ -49,7 +49,7 @@ public class ViewSoftware extends JFrame {
 		gbc_pContent.fill = GridBagConstraints.NONE;
 		gbc_pContent.gridx = 0;
 		gbc_pContent.gridy = 1;
-		add(pContent, gbc_pContent);
+		getContentPane().add(pContent, gbc_pContent);
 		
 		JPanel pButton = new JPanel();
 		GridBagConstraints gbc_pButton = new GridBagConstraints();
@@ -57,7 +57,7 @@ public class ViewSoftware extends JFrame {
 		gbc_pButton.fill = GridBagConstraints.NONE;
 		gbc_pButton.gridx = 0;
 		gbc_pButton.gridy = 2;
-		add(pButton, gbc_pButton);
+		getContentPane().add(pButton, gbc_pButton);
 		
 		GridBagLayout gbl_pButton = new GridBagLayout();
 		gbl_pButton.columnWidths = new int[] {100, 100, 100};
@@ -94,7 +94,7 @@ public class ViewSoftware extends JFrame {
 		gbc_pTable.fill = GridBagConstraints.BOTH;
 		gbc_pTable.gridx = 0;
 		gbc_pTable.gridy = 3;
-		add(pTable, gbc_pTable);
+		getContentPane().add(pTable, gbc_pTable);
 
 		setVisible(true);
 	}

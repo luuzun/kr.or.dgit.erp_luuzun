@@ -10,30 +10,20 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.border.EtchedBorder;
 
 import erp_myframework.TextFiledPanel;
 
 public class ContentSupplyCompany extends JPanel {
 	private JTextField textField;
 	public ContentSupplyCompany() {
+		setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {300, 50, 50};
-		gridBagLayout.rowHeights = new int[] {30, 30, 30, 30, 30, 30};
+		gridBagLayout.rowHeights = new int[] {30, 30, 30, 30, 30, 30, 20};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0};
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 		setLayout(gridBagLayout);
-		
-		JLabel label = new JLabel("공급회사 관리");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("굴림", Font.BOLD, 14));
-		
-		GridBagConstraints gbc_label = new GridBagConstraints();
-		gbc_label.fill = GridBagConstraints.HORIZONTAL;
-		gbc_label.insets = new Insets(10, 10, 10, 10);
-		gbc_label.gridx = 0;
-		gbc_label.gridy = 0;
-		gbc_label.gridwidth = 2;
-		add(label, gbc_label);
 		
 		TextFiledPanel tfpSupplyCompanyName = new TextFiledPanel();
 		tfpSupplyCompanyName.setTitle("회사명");
@@ -79,7 +69,7 @@ public class ContentSupplyCompany extends JPanel {
 		add(button, gbc_button);
 		
 		TextFiledPanel tfadr= new TextFiledPanel();
-		tfadr.setTitle("");
+		tfadr.setTitle("상세 주소");
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 		gbc_textField.insets = new Insets(0, 0, 5, 5);

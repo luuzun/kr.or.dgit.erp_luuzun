@@ -1,38 +1,53 @@
 package kr.or.dgit.erp_luuzun.application.supplycompany;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class ViewSupplyCompany extends JFrame {
 	private JPanel contentPane;
 	public ViewSupplyCompany() {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 450, 500);
+		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0}; //각 열의 최소 넓이  
+		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0}; //각 열의 최소 넓이  
 		gridBagLayout.rowHeights = new int[]{0, 0, 0}; //각 행의 최소 넓이
 		gridBagLayout.columnWeights = new double[]{1.0, Double.MIN_VALUE}; //각 열의 가중치
-		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 1.0}; //각 행의 가중치
+		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0}; //각 행의 가중치
 		setLayout(gridBagLayout);
+		
+		JLabel label = new JLabel("공급회사 관리");
+		label.setEnabled(false);
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("\uC778\uD130\uD30C\uD06C\uACE0\uB515 B", label.getFont().getStyle(), label.getFont().getSize() + 5));
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.fill = GridBagConstraints.HORIZONTAL;
+		gbc_label.insets = new Insets(20, 50, 0, 10);
+		gbc_label.gridx = 0;
+		gbc_label.gridy = 0;
+		gbc_label.gridwidth = 5;
+		getContentPane().add(label, gbc_label);
 		
 		ContentSupplyCompany pContent = new ContentSupplyCompany();
 		GridBagConstraints gbc_pContent = new GridBagConstraints();
 		gbc_pContent.insets = new Insets(10, 10, 10, 10);
 		gbc_pContent.fill = GridBagConstraints.NONE;
 		gbc_pContent.gridx = 0;
-		gbc_pContent.gridy = 0;
+		gbc_pContent.gridy = 1;
 		add(pContent, gbc_pContent);
 		
 		JPanel pButton = new JPanel();
@@ -40,7 +55,7 @@ public class ViewSupplyCompany extends JFrame {
 		gbc_pButton.insets = new Insets(0, 0, 0, 0);
 		gbc_pButton.fill = GridBagConstraints.NONE;
 		gbc_pButton.gridx = 0;
-		gbc_pButton.gridy = 1;
+		gbc_pButton.gridy = 2;
 		add(pButton, gbc_pButton);
 		
 		GridBagLayout gbl_pButton = new GridBagLayout();
@@ -77,7 +92,7 @@ public class ViewSupplyCompany extends JFrame {
 		GridBagConstraints gbc_pTable = new GridBagConstraints();
 		gbc_pTable.fill = GridBagConstraints.BOTH;
 		gbc_pTable.gridx = 0;
-		gbc_pTable.gridy = 2;
+		gbc_pTable.gridy = 3;
 		add(pTable, gbc_pTable);
 		
 		setVisible(true);

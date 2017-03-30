@@ -1,7 +1,9 @@
 package kr.or.dgit.erp_luuzun.application.software;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -15,6 +17,7 @@ import javax.swing.border.EtchedBorder;
 import erp_myframework.ComboPanel;
 import erp_myframework.RadioPanel;
 import erp_myframework.TextFiledPanel;
+import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class ContentSoftware extends JPanel implements MouseListener {
@@ -85,22 +88,23 @@ public class ContentSoftware extends JPanel implements MouseListener {
 		add(tfpIsSale, gbc_tfpIsSale);
 		
 		lblImage = new JLabel("");
+		lblImage.setPreferredSize(new Dimension(130, 80));
+		lblImage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImage.addMouseListener(this);
 		lblImage.setIcon(new ImageIcon(ContentSoftware.class.getResource("../../../../../../../../resources/main/DGIT_Logo.png")));
+
 		GridBagConstraints gbc_lblImage = new GridBagConstraints();
+		gbc_lblImage.fill = GridBagConstraints.BOTH;
 		gbc_lblImage.gridx = 3;
 		gbc_lblImage.gridy = 1;
-		gbc_lblImage.insets = new Insets(0, 70, 0, 0);
+		gbc_lblImage.insets = new Insets(0, 70, 10, 0);
 		gbc_lblImage.gridheight = 3;
 		add(lblImage, gbc_lblImage);
 	}
 
-	public void mouseClicked(MouseEvent e) {
-	}
-	public void mouseEntered(MouseEvent e) {
-	}
-	public void mouseExited(MouseEvent e) {
-	}
+	public void mouseClicked(MouseEvent e) {}
+	public void mouseEntered(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {}
 	public void mousePressed(MouseEvent e) {
 		if (e.getSource() == lblImage) {
 			mousePressedLblImage(e);
