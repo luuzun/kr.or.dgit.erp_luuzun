@@ -23,8 +23,7 @@ import de.javasoft.plaf.synthetica.SyntheticaLookAndFeel;
 import erp_myframework.TextFiledPanel;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import kr.or.dgit.erp_luuzun.content.ContentSale;
-import kr.or.dgit.erp_luuzun.view.TabbedSale;
+import kr.or.dgit.erp_luuzun.application.sales.ContentSale;
 
 @SuppressWarnings("serial")
 public class MainApp extends JFrame implements ActionListener {
@@ -101,7 +100,6 @@ public class MainApp extends JFrame implements ActionListener {
 		panelButton.add(btnExit);
 	}
 	
-
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnLogIn) {
 			actionPerformedBtnLogIn(e);
@@ -109,7 +107,7 @@ public class MainApp extends JFrame implements ActionListener {
 	}
 	
 	protected void actionPerformedBtnLogIn(ActionEvent e) {
-		TabbedSale tabbedSale = new TabbedSale();
-		tabbedSale.setVisible(true);
+		MainTab tabbedSale = new MainTab();
+		dispose();
 	}
 }

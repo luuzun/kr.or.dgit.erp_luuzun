@@ -1,13 +1,13 @@
-package kr.or.dgit.sw_erp_luuzun.services;
+package kr.or.dgit.erp_luuzun.services;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
 import kr.or.dgit.erp_luuzun.dto.Sale;
+import kr.or.dgit.erp_luuzun.mapper.SalesMapper;
+import kr.or.dgit.erp_luuzun.mapper.SalesMapperImpl;
 import kr.or.dgit.erp_luuzun.util.MyBatisSqlSessionFactory;
-import kr.or.dgit.sw_erp_luuzun.mapper.SalesMapper;
-import kr.or.dgit.sw_erp_luuzun.mapper.SalesMapperImpl;
 
 
 public class SalesService {

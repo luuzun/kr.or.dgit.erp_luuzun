@@ -1,4 +1,4 @@
-package kr.or.dgit.sw_erp_luuzun.mapper;
+package kr.or.dgit.erp_luuzun.mapper;
 
 import java.util.List;
 import kr.or.dgit.erp_luuzun.dto.Sale;
