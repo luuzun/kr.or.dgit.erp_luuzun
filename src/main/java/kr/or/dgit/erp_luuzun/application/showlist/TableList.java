@@ -1,13 +1,14 @@
-package kr.or.dgit.erp_luuzun.table;
+package kr.or.dgit.erp_luuzun.application.showlist;
+
+import java.awt.BorderLayout;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import java.awt.BorderLayout;
 
-public class TableSale extends JPanel {
+public class TableList extends JPanel{
 	private JTable table;
-	public TableSale() {
+	public TableList() {
 		setLayout(new BorderLayout(0, 0));
 		
 		JScrollPane scrollPane = new JScrollPane();

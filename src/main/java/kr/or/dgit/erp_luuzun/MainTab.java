@@ -1,4 +1,4 @@
-package kr.or.dgit.erp_luuzun.view;
+package kr.or.dgit.erp_luuzun;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -11,9 +11,15 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 
-import kr.or.dgit.erp_luuzun.content.ContentSale;
+import kr.or.dgit.erp_luuzun.application.delivery.ViewDelivery;
+import kr.or.dgit.erp_luuzun.application.sales.ViewSale;
+import kr.or.dgit.erp_luuzun.application.showlist.ViewList;
 
-public class TabbedSale extends JFrame {
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MainTab extends JFrame {
 
 	private JPanel contentPane;
 
@@ -24,7 +30,7 @@ public class TabbedSale extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TabbedSale frame = new TabbedSale();
+					MainTab frame = new MainTab();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,9 +39,9 @@ public class TabbedSale extends JFrame {
 		});
 	}
 
-	public TabbedSale() {
+	public MainTab() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 836, 532);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -68,6 +74,30 @@ public class TabbedSale extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		
-		tabbedPane.add("Sale",new ViewSale());
+		tabbedPane.add("주문 관리",new ViewSale());
+		tabbedPane.add("납품 관리",new ViewDelivery());
+		tabbedPane.add("거래내역 확인",new ViewList());
+		
+		JPanel pButton = new JPanel();
+		contentPane.add(pButton, BorderLayout.NORTH);
+		
+		JButton btnSupplyComp = new JButton("공급사 관리");
+		btnSupplyComp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		pButton.add(btnSupplyComp);
+		
+		JButton btnSoftWare = new JButton("S/W 관리");
+		pButton.add(btnSoftWare);
+		
+		JButton btnClient = new JButton("고객 관리");
+		pButton.add(btnClient);
+		
+		JButton btnChart = new JButton("통계차트");
+		pButton.add(btnChart);
+		
+		JButton btnReport = new JButton("보고서");
+		pButton.add(btnReport);
 	}
 }
