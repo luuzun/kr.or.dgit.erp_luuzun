@@ -3,28 +3,14 @@ package kr.or.dgit.erp_luuzun.content;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import javax.swing.JPanel;
 
 import erp_myframework.CheckBoxPanel;
 import erp_myframework.ComboPanel;
 import erp_myframework.TextFiledPanel;
-import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.util.StringConverter;
-import javafx.util.converter.LocalDateStringConverter;
 
 public class ContentSale extends JPanel {
-	private static final String pattern = "dd-MMM-yy";
-
 	public ContentSale() {
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] {200, 200,50};
