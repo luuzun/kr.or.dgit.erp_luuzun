@@ -1,19 +1,17 @@
 package kr.or.dgit.erp_luuzun.application.delivery;
 
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
+import javax.swing.SwingConstants;
 
-import erp_myframework.CheckBoxPanel;
 import erp_myframework.ComboPanel;
 import erp_myframework.TextFiledPanel;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.SwingConstants;
 
 public class ContentDelivery extends JPanel {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
