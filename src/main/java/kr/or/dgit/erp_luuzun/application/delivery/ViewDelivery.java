@@ -19,7 +19,7 @@ public class ViewDelivery extends JPanel{
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 1.0}; //각 행의 가중치
 		setLayout(gridBagLayout);
 		
-		JLabel label = new JLabel("소프트웨어 관리");
+		JLabel label = new JLabel("납품 관리");
 		label.setEnabled(false);
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("\uC778\uD130\uD30C\uD06C\uACE0\uB515 B", label.getFont().getStyle(), label.getFont().getSize() + 5));

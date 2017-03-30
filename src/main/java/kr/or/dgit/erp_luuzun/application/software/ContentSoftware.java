@@ -3,7 +3,6 @@ package kr.or.dgit.erp_luuzun.application.software;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -12,12 +11,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.EtchedBorder;
 
 import erp_myframework.ComboPanel;
 import erp_myframework.RadioPanel;
 import erp_myframework.TextFiledPanel;
-import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class ContentSoftware extends JPanel implements MouseListener {
@@ -110,8 +109,10 @@ public class ContentSoftware extends JPanel implements MouseListener {
 			mousePressedLblImage(e);
 		}
 	}
+	
 	public void mouseReleased(MouseEvent e) {
 	}
+	
 	protected void mousePressedLblImage(MouseEvent e) {
 		JOptionPane.showMessageDialog(null, "파일추저지롱~");
 	}
