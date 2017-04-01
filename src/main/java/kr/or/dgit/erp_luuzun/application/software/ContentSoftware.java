@@ -90,7 +90,7 @@ public class ContentSoftware extends JPanel implements MouseListener {
 		lblImage.setPreferredSize(new Dimension(130, 80));
 		lblImage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImage.addMouseListener(this);
-		lblImage.setIcon(new ImageIcon(ContentSoftware.class.getResource("../../../../../../../../resources/main/software_image/DGIT_Logo.png")));
+		lblImage.setIcon(new ImageIcon(ContentSoftware.class.getResource("../../../../../../../../resources/main/softwareimage/DGIT_Logo.png")));
 		GridBagConstraints gbc_lblImage = new GridBagConstraints();
 		gbc_lblImage.fill = GridBagConstraints.BOTH;
 		gbc_lblImage.gridx = 3;
