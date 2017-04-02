@@ -23,7 +23,8 @@ public class AddrSearchTest {
 		addrService= null;
 	}
 
-	@Test
+	//Search Address Test
+	/*@Test
 	public void testSearch() {
 		Address address= new Address();
 		address.setSido("대구광역시");
@@ -33,5 +34,5 @@ public class AddrSearchTest {
 		List<Address> emplist = Collections.emptyList();
 		System.out.println(list);
 		Assert.assertNotEquals(emplist, list);
-	}
+	}*/
 }
