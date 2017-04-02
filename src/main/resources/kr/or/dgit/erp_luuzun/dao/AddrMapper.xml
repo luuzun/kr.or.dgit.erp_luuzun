@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dgit.erp_luuzun.dao.AddrMapper">
+	<resultMap type="Address" id="AddrResult">
+		<result property="zipCode"	 column="zipcode"/>
+		<result property="sido" 	 column="sido"/>
+		<result property="sigungu" 	 column="sigungu"/>
+		<result property="doro" 	 column="doro"/>
+		<result property="building1" column="building1"/>
+		<result property="building2" column="building2"/>
+	</resultMap>
+	
+	<select id="searchSido" resultMap="AddrResult" parameterType="Address">
+		SELECT zipcode, sido, sigungu, doro, building1, building2 
+			FROM Address 
+			WHERE sido = #{sido} AND doro = #{doro};
+	</select>
+</mapper>

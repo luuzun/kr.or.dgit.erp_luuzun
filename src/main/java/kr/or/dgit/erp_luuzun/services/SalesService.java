@@ -4,14 +4,17 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import kr.or.dgit.erp_luuzun.dao.SalesMapper;
+import kr.or.dgit.erp_luuzun.dao.SalesMapperImpl;
 import kr.or.dgit.erp_luuzun.dto.Sale;
-import kr.or.dgit.erp_luuzun.mapper.SalesMapper;
-import kr.or.dgit.erp_luuzun.mapper.SalesMapperImpl;
 import kr.or.dgit.erp_luuzun.util.MyBatisSqlSessionFactory;
-
-
 public class SalesService {
-
+	public static final SalesService instance = new SalesService();
+	private SalesService() {}
+	public static SalesService getInstance(){
+		return instance;
+	}
+	
 	public int insertSales(Sale sale) {
 		int res = -1;
 		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {

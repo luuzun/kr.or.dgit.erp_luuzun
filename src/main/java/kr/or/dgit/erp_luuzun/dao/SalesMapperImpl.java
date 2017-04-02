@@ -1,4 +1,4 @@
-package kr.or.dgit.erp_luuzun.mapper;
+package kr.or.dgit.erp_luuzun.dao;
 
 import java.util.List;
 
@@ -9,11 +9,10 @@ import org.apache.ibatis.session.SqlSession;
 import kr.or.dgit.erp_luuzun.dto.Sale;
 
 public class SalesMapperImpl implements SalesMapper{
-
-	private String nameSpace = "kr.or.dgit.erp_luuzun.mapper.SalesMapper."; //SalesMapper.xml의 namespace
 	private SqlSession sqlSession;
 	private static final Log log = LogFactory.getLog(SalesMapperImpl.class);
-	
+	private String nameSpace = "kr.or.dgit.erp_luuzun.dao.SalesMapper."; //SalesMapper.xml의 namespace
+
 	public SalesMapperImpl(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}

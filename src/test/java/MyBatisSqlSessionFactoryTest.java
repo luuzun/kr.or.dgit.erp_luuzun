@@ -23,5 +23,4 @@ public class MyBatisSqlSessionFactoryTest {
 	public void testSqlSession() {
 		Assert.assertNotNull(sqlSessionFactory.openSession());
 	}
-
 }

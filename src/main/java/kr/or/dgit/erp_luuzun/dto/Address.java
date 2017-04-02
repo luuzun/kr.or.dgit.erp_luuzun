@@ -1,7 +1,6 @@
 package kr.or.dgit.erp_luuzun.dto;
 
 public class Address {
-	
 	private String zipCode;
 	private String sido;
 	private String sigungu;
@@ -9,30 +8,21 @@ public class Address {
 	private int building1;
 	private int building2;
 	
-	
-	public Address() {
-		
-	}
-	
+	public Address() {}
 	
 	public Address(String sido, String doro) {
-		super();
 		this.sido = sido;
 		this.doro = doro;
 	}
-	
 
 	public Address(String zipCode, String sido, String sigungu, String doro) {
-		super();
 		this.zipCode = zipCode;
 		this.sido = sido;
 		this.sigungu = sigungu;
 		this.doro = doro;
 	}
 
-
 	public Address(String zipCode, String sido, String sigungu, String doro, int building1, int building2) {
-		super();
 		this.zipCode = zipCode;
 		this.sido = sido;
 		this.sigungu = sigungu;
@@ -40,7 +30,6 @@ public class Address {
 		this.building1 = building1;
 		this.building2 = building2;
 	}
-
 
 	public String getZipCode() {
 		return zipCode;
@@ -80,15 +69,11 @@ public class Address {
 	}
 	@Override
 	public String toString() {
-		return String.format("Post [zipCode=%s, sido=%s, sigungu=%s, doro=%s, building1=%s, building2=%s]", zipCode,
+		return String.format("Address [zipCode=%s, sido=%s, sigungu=%s, doro=%s, building1=%s, building2=%s]", zipCode,
 				sido, sigungu, doro, building1, building2);
 	}
 	
 	public Object[] toarray() {
 		return new Object[]{ zipCode, sido + sigungu+ doro+  building1+ building2};
 	}
-
-
-	
-	
 }

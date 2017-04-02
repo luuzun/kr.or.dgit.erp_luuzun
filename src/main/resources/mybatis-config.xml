@@ -28,6 +28,6 @@
 		</environment>
 	</environments>
 	<mappers>
-		<package name="kr.or.dgit.erp_luuzun.mapper"/>
+		<package name="kr.or.dgit.erp_luuzun.dao"/>
 	</mappers>
 </configuration>
