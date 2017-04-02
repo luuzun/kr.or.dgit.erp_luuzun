@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="kr.or.dgit.erp_luuzun.dao.DeliveryMapper">
+    
+    <resultMap type="Delivery" id="DeliveryResult">
+    	<id property="delCode" column="del_code"/>
+    	<result property="supplyPrice" column="supply_price"/>
+    	<result property="supplyAmount" column="supply_amount"/>
+    	<result property="orderDate" column="order_date"/>
+    	<result property="delIsExist" column="del_isExist"/>
+    	<association property="supplyCompany" resultMap="kr.or.dgit.erp_luuzun.dao.SupplyCompMapper.SupplyCompanyResult"/>
+    </resultMap>
+		
+
+	<!-- Select SQL -->
+    <sql id="selectSQL">
+		SELECT del_code, sc.comp_code, sc.comp_name, sw.sw_code, sw.sw_name, supply_price, supply_amount, order_date, del_isExist 
+			FROM delivery del 
+				JOIN software sw ON del.sw_code = sw.sw_code
+				JOIN supply_company sc ON sc.comp_code = del.comp_code
+	</sql>
+
+	<!-- Where SQL -->
+	<sql id="whereSQL">
+		<where>
+			<if test="delCode != null">
+				WHERE del_code=#{delCode}
+			</if>
+		</where>
+	</sql>
+	    
+    <!-- Select By All --> 
+    <select id="selectDeliveryByAll" resultMap="DeliveryResult">
+    	<include refid="selectSQL" />
+    		ORDER BY del_code;
+    </select>
+</mapper>
+

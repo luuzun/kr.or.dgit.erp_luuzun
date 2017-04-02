@@ -10,7 +10,7 @@ public class SupplyCompany {
 	private String compTel;
 	private boolean compIsExist;
 	private List<Delivery> delivery;
-	
+
 	public String getCompCode() {
 		return compCode;
 	}

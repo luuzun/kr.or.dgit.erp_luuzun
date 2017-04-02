@@ -42,8 +42,9 @@ UPDATE client SET clnt_isExist=FALSE WHERE clnt_code=#{clntNo};
 
 ############################ Supply_Company ###########################
 -- 전체검색
-SELECT comp_code, comp_name, comp_addr, comp_tel, comp_isExist 
-	FROM supply_company;
+SELECT sc.comp_code, comp_name, comp_addr, comp_tel, comp_isExist, del.del_code 
+	FROM supply_company sc
+		JOIN delivery del ON del.comp_code = sc.comp_code;
 
 	
 -- 번호검색
@@ -153,9 +154,14 @@ UPDATE software SET sw_issale=#{swIssale}
 ################################# Delivery ################################
 
 -- 전체검색
-SELECT del_code, comp_code, sw_code, sw_code, supply_price, supply_amount, order_date, del_isExist 
+SELECT del_code, comp_code, sw_code, supply_price, supply_amount, order_date, del_isExist 
 	FROM delivery;
 
+SELECT del_code, sc.comp_code, sc.comp_name, sw.sw_code, sw.sw_name, supply_price, supply_amount, order_date, del_isExist 
+	FROM delivery del 
+		JOIN software sw ON del.sw_code = sw.sw_code
+		JOIN supply_company sc ON sc.comp_code = del.comp_code
+	ORDER BY del_code;
 	
 -- 번호검색
 SELECT del_code, comp_code, sw_code, sw_code, supply_price, supply_amount, order_date, del_isExist 
