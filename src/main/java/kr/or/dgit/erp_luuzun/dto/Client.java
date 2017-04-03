@@ -6,7 +6,7 @@ public class Client {
 	//고객사
 	private String clntCode;
 	private String clntName;
-	private Address clntAddr;
+	private Address address;
 	private String clntTel;
 	private boolean clntIsExist;
 	private List<Sale> sale;
@@ -27,12 +27,12 @@ public class Client {
 		this.clntName = clntName;
 	}
 	
-	public Address getClntAddr() {
-		return clntAddr;
+	public Address getAddress() {
+		return address;
 	}
 	
-	public void setClntAddr(Address clntAddr) {
-		this.clntAddr = clntAddr;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	
 	public String getClntTel() {
@@ -62,6 +62,6 @@ public class Client {
 	@Override
 	public String toString() {
 		return String.format("%s, %s, %s, %s, %s, %s",
-			clntCode, clntName, clntAddr, clntTel, clntIsExist, sale);
+			clntCode, clntName, address, clntTel, clntIsExist, sale);
 	}
 }

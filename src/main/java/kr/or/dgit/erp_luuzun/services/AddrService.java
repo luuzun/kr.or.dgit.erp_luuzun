@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import kr.or.dgit.erp_luuzun.dao.AddrMapper;
 import kr.or.dgit.erp_luuzun.dao.AddrMapperImpl;
 import kr.or.dgit.erp_luuzun.dto.Address;
 import kr.or.dgit.erp_luuzun.util.MyBatisSqlSessionFactory;
@@ -17,8 +18,8 @@ public class AddrService {
 
 	public List<Address> searchSido(Address address){
 		try(SqlSession sqlsession = MyBatisSqlSessionFactory.openSession();){
-			AddrMapperImpl addrMapperImpl = new AddrMapperImpl(sqlsession);
-			return addrMapperImpl.searchSido(address);
+			AddrMapper addrMapper = new AddrMapperImpl(sqlsession);
+			return addrMapper.searchSido(address);
 		}
 	}
 }

@@ -10,18 +10,6 @@ public class Address {
 	
 	public Address() {}
 	
-	public Address(String string) {
-		if (string != null) {
-			String[] parts = string.split(" ");
-			if (parts.length > 0)
-				this.sido = parts[0];
-			if (parts.length > 1)
-				this.sigungu = parts[1];
-			if (parts.length > 2)
-				this.doro = parts[2];
-		}
-	}
-	
 	public Address(String sido, String doro) {
 		this.sido = sido;
 		this.doro = doro;

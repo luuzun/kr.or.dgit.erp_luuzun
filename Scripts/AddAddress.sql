@@ -1,3 +1,5 @@
+show TABLEs;
+DROP TABLE address;
 CREATE TABLE Address(
 	zipcode   char(5) NULL,
 	sido 	  varchar(20) NULL,
@@ -149,7 +151,7 @@ CREATE INDEX idx_Address_doro	   ON Address(doro);
 CREATE INDEX idx_Address_building1 ON Address(building1);
 CREATE INDEX idx_Address_building2 ON Address(building2);
 
-SELECT * FROM Address WHERE sido='대구광역시';
+SELECT * FROM Address WHERE sido='서울특별시';
 
 SELECT zipcode, sido, sigungu, doro, building1, building2	
 	FROM Address WHERE sido LIKE '%대구%' AND doro LIKE '%산격로%';

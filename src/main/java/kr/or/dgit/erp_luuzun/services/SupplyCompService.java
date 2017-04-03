@@ -4,11 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import kr.or.dgit.erp_luuzun.dao.SalesMapper;
-import kr.or.dgit.erp_luuzun.dao.SalesMapperImpl;
 import kr.or.dgit.erp_luuzun.dao.SupplyCompMapper;
 import kr.or.dgit.erp_luuzun.dao.SupplyCompMapperImpl;
-import kr.or.dgit.erp_luuzun.dto.Sale;
 import kr.or.dgit.erp_luuzun.dto.SupplyCompany;
 import kr.or.dgit.erp_luuzun.util.MyBatisSqlSessionFactory;
 public class SupplyCompService {

@@ -11,17 +11,17 @@ import kr.or.dgit.erp_luuzun.dto.Delivery;
 import kr.or.dgit.erp_luuzun.dto.SupplyCompany;
 
 public class DeliveryMapperImpl implements DeliveryMapper{
-	private SqlSession sqlsession;
+	private SqlSession sqlSession;
 	private static final Log log = LogFactory.getLog(DeliveryMapperImpl.class);
-	private String namespace = "kr.or.dgit.erp_luuzun.dao.DeliveryMapper.";
+	private String nameSpace = "kr.or.dgit.erp_luuzun.dao.DeliveryMapper.";
 	
-	public DeliveryMapperImpl(SqlSession sqlsession) {
-		this.sqlsession = sqlsession;
+	public DeliveryMapperImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
 	}
 
 	@Override
 	public List<Delivery> selectDeliveryByAll() {
 		log.debug("selectDeliveryByAll()");
-		return sqlsession.selectList(namespace + "selectDeliveryByAll");
+		return sqlSession.selectList(nameSpace + "selectDeliveryByAll");
 	}
 }

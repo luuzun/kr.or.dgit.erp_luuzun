@@ -5,9 +5,9 @@
 	<resultMap type="SupplyCompany" id="SupplyCompanyResult">
     	<id property="compCode" column="comp_code"/>
     	<result property="compName" column="comp_name"/>
-    	<result property="compAddr" column="comp_addr"/>
     	<result property="compTel" column="comp_tel"/>
     	<result property="compIsExist" column="comp_isExist"/>
+    	<association property="address" resultMap="kr.or.dgit.erp_luuzun.dao.AddrMapper.AddrResult"/>
     </resultMap>
     
 	<!-- Select SQL -->

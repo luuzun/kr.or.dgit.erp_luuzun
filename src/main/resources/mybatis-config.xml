@@ -12,9 +12,9 @@
 		<package name="kr.or.dgit.erp_luuzun.dto"/>
 	</typeAliases>
 	
-	<typeHandlers>
+	<!-- <typeHandlers>
 		<package name="kr.or.dgit.erp_luuzun.typehandlers"/>
-	</typeHandlers>
+	</typeHandlers> -->
 	
 	<environments default="development">
 		<environment id="development">

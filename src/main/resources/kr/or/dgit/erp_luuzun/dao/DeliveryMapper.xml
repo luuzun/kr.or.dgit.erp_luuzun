@@ -24,7 +24,7 @@
 	<sql id="whereSQL">
 		<where>
 			<if test="delCode != null">
-				WHERE del_code=#{delCode}
+				del_code=#{delCode}
 			</if>
 		</where>
 	</sql>

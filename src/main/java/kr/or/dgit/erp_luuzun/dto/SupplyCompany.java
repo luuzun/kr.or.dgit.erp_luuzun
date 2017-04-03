@@ -6,7 +6,7 @@ public class SupplyCompany {
 	//공급회사
 	private String compCode;
 	private String compName;
-	private Address compAddr;
+	private Address address;
 	private String compTel;
 	private boolean compIsExist;
 	private List<Delivery> delivery;
@@ -27,12 +27,12 @@ public class SupplyCompany {
 		this.compName = compName;
 	}
 
-	public Address getCompAddr() {
-		return compAddr;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setCompAddr(Address compAddr) {
-		this.compAddr = compAddr;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	public String getCompTel() {
@@ -62,6 +62,6 @@ public class SupplyCompany {
 	@Override
 	public String toString() {
 		return String.format("%s, %s, %s, %s, %s, %s",
-			compCode, compName, compAddr, compTel, compIsExist, delivery);
+			compCode, compName, address, compTel, compIsExist, delivery);
 	}
 }

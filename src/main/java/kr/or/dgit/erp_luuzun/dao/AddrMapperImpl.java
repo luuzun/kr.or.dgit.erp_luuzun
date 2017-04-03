@@ -9,17 +9,17 @@ import org.apache.ibatis.session.SqlSession;
 import kr.or.dgit.erp_luuzun.dto.Address;
 
 public class AddrMapperImpl implements AddrMapper{
-	private SqlSession sqlsession;
+	private SqlSession sqlSession;
 	private static final Log log = LogFactory.getLog(AddrMapperImpl.class);
-	private String namespace = "kr.or.dgit.erp_luuzun.dao.AddrMapper.";
+	private String nameSpace = "kr.or.dgit.erp_luuzun.dao.AddrMapper.";
 	
-	public AddrMapperImpl(SqlSession sqlsession) {
-		this.sqlsession = sqlsession;
+	public AddrMapperImpl(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
 	}
 
 	@Override
 	public List<Address> searchSido(Address address) {
 		log.debug("searchSido()");
-		return sqlsession.selectList(namespace + "searchSido", address);
+		return sqlSession.selectList(nameSpace + "searchSido", address);
 	}
 }

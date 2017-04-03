@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="kr.or.dgit.erp_luuzun.dao.ClientMapper">
+
+	<resultMap type="Client" id="ClientResult">
+		<id property="clntCode" column="clnt_code"/>
+		<result property="clntName" column="clnt_name"/>
+		<result property="clntTel" column="clnt_tel"/>
+		<result property="clntIsExist" column="clnt_isExist"/>
+	   	<association property="address" resultMap="kr.or.dgit.erp_luuzun.dao.AddrMapper.AddrResult"/>
+	</resultMap>
+	 
+	<!-- Select SQL -->
+    <sql id="selectSQL">
+		SELECT clnt_code, clnt_name, clnt_addr, clnt_tel, clnt_isExist 
+			FROM client
+	</sql>
+
+	<!-- Where SQL -->
+	<sql id="whereSQL">
+		<where>
+			<if test="clntCode != null">
+				clnt_code=#{clntCode}
+			</if>
+		</where>
+	</sql>
+	    
+    <!-- Select By All --> 
+    <select id="selectClientByAll" resultMap="ClientResult">
+    	<include refid="selectSQL" />
+    		ORDER BY clnt_code;
+    </select>
+</mapper>
+

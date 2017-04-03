@@ -19,12 +19,14 @@ public class DeliveryCompTest {
 	public static void tearDownAfterClass() throws Exception {}
 	
 	@Test //selectSalesByAll Test
-	public void testSelectSupplyCompByAll(){
+	public void testDeliveryCompByAll(){
+		System.out.println("\n=================DeliveryComp Test========================");
 		List<Delivery> lists = DeliveryService.getInstance().selectDeliveryByAll();
 		for (Delivery delivery : lists) {
 			System.out.println(delivery);
 		}
 		List<Delivery> emptyList = Collections.emptyList();
 		Assert.assertNotEquals(emptyList, lists);
+		System.out.println("==========================================================\n");
 	}
 }

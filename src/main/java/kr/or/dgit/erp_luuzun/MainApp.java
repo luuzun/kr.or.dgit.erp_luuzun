@@ -33,7 +33,7 @@ public class MainApp extends JFrame implements ActionListener {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try {  
 					try {
 						UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());
 						SyntheticaLookAndFeel.setFont("Gulim", 12);

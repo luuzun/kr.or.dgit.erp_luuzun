@@ -6,24 +6,24 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import kr.or.dgit.erp_luuzun.dto.SupplyCompany;
-import kr.or.dgit.erp_luuzun.services.SupplyCompService;
+import kr.or.dgit.erp_luuzun.dto.Category;
+import kr.or.dgit.erp_luuzun.services.CategoryService;
 
-public class SupplyCompTest {
+public class CategoryTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {}
 	
-	@Test //selectByAll Test
-	public void testSelectSupplyCompByAll(){
+	@Test //selectSalesByAll Test
+	public void testSelectCategoryByAll(){
 		System.out.println("\n==================SupplyComp Test==========================");
-		List<SupplyCompany> lists = SupplyCompService.getInstance().selectSupplyCompByAll();
-		for (SupplyCompany supplyCompany : lists) {
-			System.out.println(supplyCompany);
+		List<Category> lists = CategoryService.getInstance().selectCategoryByAll();
+		for (Category category : lists) {
+			System.out.println(category);
 		}
-		List<SupplyCompany> emptyList = Collections.emptyList();
+		List<Category> emptyList = Collections.emptyList();
 		Assert.assertNotEquals(emptyList, lists);
 		System.out.println("==========================================================\n");
 	}
