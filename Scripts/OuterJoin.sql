@@ -30,11 +30,12 @@ SELECT * FROM sale s
 DESC view_sale_detail;
 
 
-SELECT DISTINCT * FROM software sw
+SELECT * FROM software sw
 	JOIN delivery del ON sw.sw_code = del.sw_code
 	JOIN supply_company sc ON sc.comp_code = del.comp_code
 	JOIN category cat ON sw.group_code = cat.group_code
 	JOIN sale s ON sw.sw_code = s.sw_code
 	JOIN view_sale_detail sd ON s.sale_code = sd.sale_code;
 	
-	
+SELECT * FROM software
+	;
