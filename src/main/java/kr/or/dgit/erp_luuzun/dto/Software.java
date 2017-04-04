@@ -9,15 +9,12 @@ public class Software {
 	private Category category;
 	private int salePrice;
 	private int swInven;
+	private String swImg;
 	private boolean swIsSale;
 	private List<Delivery> delivery;
 	private List<Sale> sale;
 	public String getSwCode() {
 		return swCode;
-	}
-	
-	public void setSwCode(String swCode) {
-		this.swCode = swCode;
 	}
 	
 	public String getSwName() {
@@ -52,6 +49,14 @@ public class Software {
 		this.swInven = swInven;
 	}
 	
+	public String getSwImg() {
+		return swImg;
+	}
+	
+	public void setSwImg(String swImg) {
+		this.swImg = swImg;
+	}
+	
 	public boolean isSwIsSale() {
 		return swIsSale;
 	}
@@ -76,9 +81,13 @@ public class Software {
 		this.sale = sale;
 	}
 	
+	public void setSwCode(String swCode) {
+		this.swCode = swCode;
+	}
+	
 	@Override
 	public String toString() {
-		return String.format("%s, %s, %s, %s, %s, %s, %s, %s",
-			swCode, swName, category, salePrice, swInven, swIsSale, delivery, sale);
+		return String.format("%s, %s, %s, %s, %s, %s, %s, %s, %s",
+				swCode, swName, category, salePrice, swInven, swImg, swIsSale, delivery, sale);
 	}
 }

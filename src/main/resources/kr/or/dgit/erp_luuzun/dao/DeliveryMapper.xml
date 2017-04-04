@@ -9,15 +9,15 @@
     	<result property="orderDate" column="order_date"/>
     	<result property="delIsExist" column="del_isExist"/>
     	<association property="supplyCompany" resultMap="kr.or.dgit.erp_luuzun.dao.SupplyCompMapper.SupplyCompanyResult"/>
+    	<association property="software" resultMap="kr.or.dgit.erp_luuzun.dao.SoftwareMapper.SoftwareResult"/>
     </resultMap>
 		
 
 	<!-- Select SQL -->
     <sql id="selectSQL">
-		SELECT del_code, sc.comp_code, sc.comp_name, sw.sw_code, sw.sw_name, supply_price, supply_amount, order_date, del_isExist 
-			FROM delivery del 
-				JOIN software sw ON del.sw_code = sw.sw_code
-				JOIN supply_company sc ON sc.comp_code = del.comp_code
+		SELECT * FROM delivery del 
+			JOIN software sw ON del.sw_code = sw.sw_code
+			JOIN supply_company sc ON sc.comp_code = del.comp_code
 	</sql>
 
 	<!-- Where SQL -->

@@ -7,6 +7,7 @@
     	<result property="swName" column="sw_name"/>
     	<result property="salePrice" column="sale_price"/>
     	<result property="swInven" column="sw_inven"/>
+    	<result property="swImg" column="sw_img"/>
     	<result property="swIsSale" column="sw_isSale"/>
     	<association property="category" resultMap="kr.or.dgit.erp_luuzun.dao.CategoryMapper.CategoryResult"/>
     </resultMap>
@@ -14,7 +15,7 @@
 
 	<!-- Select SQL -->
     <sql id="selectSQL">
-		SELECT sw_code, c.group_code, group_name sw_name, sale_price, sw_inven, sw_issale 
+		SELECT * 
 			FROM software sw 
 				JOIN category c on sw.group_code = c.group_code
 	</sql>

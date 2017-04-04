@@ -35,12 +35,13 @@ CREATE TABLE category (
 -- 소프트웨어
 -- sw_code, group_code, sw_name, sale_price, sw_inven, sw_issale  
 CREATE TABLE software (
-	sw_code    VARCHAR(6)  NOT NULL,
-	group_code VARCHAR(6)  NOT NULL,
-	sw_name    VARCHAR(50) NOT NULL,
-	sale_price INTEGER     NOT NULL,
-	sw_inven   INTEGER     NOT NULL,
-	sw_issale  BOOLEAN     NOT NULL,
+	sw_code    VARCHAR(6)   NOT NULL,
+	group_code VARCHAR(6)   NOT NULL,
+	sw_name    VARCHAR(50)  NOT NULL,
+	sale_price INTEGER      NOT NULL,
+	sw_inven   INTEGER      NOT NULL,
+	sw_img	   VARCHAR(100) NOT NULL,
+	sw_issale  BOOLEAN      NOT NULL,
 	PRIMARY KEY (sw_code),
 	FOREIGN KEY (group_code) 
 		REFERENCES category(group_code)

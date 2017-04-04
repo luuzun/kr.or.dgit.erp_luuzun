@@ -12,8 +12,7 @@
     
 	<!-- Select SQL -->
     <sql id="selectSQL">
-		SELECT comp_code, comp_name, comp_addr, comp_tel, comp_isExist
-			FROM supply_company 
+		SELECT * FROM supply_company 
 	</sql>
 
 	<!-- Where SQL -->

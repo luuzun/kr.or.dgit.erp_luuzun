@@ -24,17 +24,17 @@ INSERT INTO category(group_code, group_name) VALUES
 	("ED", "교육");
 	
 -- 소프트웨어 샘플데이터 입력
-INSERT INTO software(sw_code,group_code,sw_name,sale_price,sw_inven,sw_issale) VALUES
-	("SW001","GM", "바람의제국",40000,   2000,  TRUE),
-	("SW002","OF", "국제무역", 	48000,   500,   FALSE),
-	("SW003","GM", "FIFA2015",	40500, 	 1000 , FALSE),
-	("SW004","GM", "삼국지",	48000, 	 400,   FALSE),
-	("SW005","GM", "아마겟돈",	50750, 	 1000,  FALSE),
-	("SW006","OF", "한컴오피스",1918000, 2000,  FALSE),
-	("SW007","GR", "포토샵",	1519000, 400,   FALSE),
-	("SW008","ED", "오토캐드",	978000,	 2,	    FALSE),
-	("SW009","GM", "인디자인", 	218040,	 4000,  FALSE),
-	("SW010","OF", "windows10",	333450,	 40000, TRUE);
+INSERT INTO software(sw_code,group_code,sw_name,sale_price,sw_inven, sw_img, sw_issale) VALUES
+	("SW001","GM", "바람의제국",40000,   2000, "DGIT_Logo.png", TRUE),
+	("SW002","OF", "국제무역", 	48000,   500,  "DGIT_Logo.png", FALSE),
+	("SW003","GM", "FIFA2015",	40500, 	 1000, "DGIT_Logo.png", FALSE),
+	("SW004","GM", "삼국지",	48000, 	 400,  "DGIT_Logo.png", FALSE),
+	("SW005","GM", "아마겟돈",	50750, 	 1000, "DGIT_Logo.png", FALSE),
+	("SW006","OF", "한컴오피스",1918000, 2000, "DGIT_Logo.png", FALSE),
+	("SW007","GR", "포토샵",	1519000, 400,  "DGIT_Logo.png", FALSE),
+	("SW008","ED", "오토캐드",	978000,	 2,	   "DGIT_Logo.png", FALSE),
+	("SW009","GM", "인디자인", 	218040,	 4000, "DGIT_Logo.png", FALSE),
+	("SW010","OF", "windows10",	333450,	 40000,"DGIT_Logo.png", TRUE);
  
 -- 납품현황입력
 INSERT INTO delivery(del_code, comp_code, sw_code, supply_price, supply_amount, order_date, del_isExist) VALUES

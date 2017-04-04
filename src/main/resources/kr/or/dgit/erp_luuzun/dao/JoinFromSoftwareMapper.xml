@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="kr.or.dgit.erp_luuzun.dao.JoinFromSoftwareMapper">
+   
+	<resultMap type="JoinFromSoftware" id="JoinFromSoftwareResult">
+       	<association property="software" resultMap="kr.or.dgit.erp_luuzun.dao.SoftwareMapper.SoftwareResult"/>
+    	<association property="supplyCompany" resultMap="kr.or.dgit.erp_luuzun.dao.SupplyCompMapper.SupplyCompanyResult"/>
+    	<association property="category" resultMap="kr.or.dgit.erp_luuzun.dao.CategoryMapper.CategoryResult"/>
+    	<association property="saleDetail" resultMap="kr.or.dgit.erp_luuzun.dao.SaleDetailMapper.SaleDetailResult"/>
+    	<collection property="delivery" resultMap="kr.or.dgit.erp_luuzun.dao.DeliveryMapper.DeliveryResult"/>
+    	<collection property="sale" resultMap="kr.or.dgit.erp_luuzun.dao.SaleMapper.SaleResult"/>
+    </resultMap>
+    
+	<!-- Select SQL -->
+    <sql id="selectSQL">
+		SELECT DISTINCT * FROM software sw
+			JOIN delivery del ON sw.sw_code = del.sw_code
+			JOIN supply_company sc ON sc.comp_code = del.comp_code
+			JOIN category cat ON sw.group_code = cat.group_code
+			JOIN sale s ON sw.sw_code = s.sw_code
+			JOIN view_sale_detail sd ON s.sale_code = sd.sale_code;
+	</sql>
+
+    <!-- Select By All --> 
+    <select id="selectJoinFromSoftwareByAll" resultMap="JoinFromSoftwareResult">
+    	<include refid="selectSQL" />
+    </select>
+</mapper>
+
+
