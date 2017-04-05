@@ -14,6 +14,7 @@ public class TestMain {
 		//	System.out.println("=============");
 		//}
 		System.out.println(list.get(1).getSale().get(0).getSoftware().getSwName());
+		System.out.println(list.get(1).getSale().get(1).getSoftware().getSwName());
 		System.out.println(list.get(2).getSale().get(0).getSoftware().getSwName());
 		System.out.println(list.get(3).getSale().get(0).getSoftware().getSwName());
 		System.out.println(list.get(4).getSale().get(0).getSoftware().getSwName());

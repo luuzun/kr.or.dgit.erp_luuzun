@@ -30,7 +30,7 @@ SELECT * FROM sale s
 DESC view_sale_detail;
 
 
-SELECT * FROM software sw
+SELECT sw.sw_name, del.del_code, s.sale_code, cat.group_name, sc.comp_name, sd.total_supply_price FROM software sw
 	JOIN delivery del ON sw.sw_code = del.sw_code
 	JOIN supply_company sc ON sc.comp_code = del.comp_code
 	JOIN category cat ON sw.group_code = cat.group_code

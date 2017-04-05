@@ -8,17 +8,23 @@
     	<association property="category" resultMap="kr.or.dgit.erp_luuzun.dao.CategoryMapper.CategoryResult"/>
     	<association property="saleDetail" resultMap="kr.or.dgit.erp_luuzun.dao.SaleDetailMapper.SaleDetailResult"/>
     	<collection property="delivery" resultMap="kr.or.dgit.erp_luuzun.dao.DeliveryMapper.DeliveryResult"/>
-    	<collection property="sale" resultMap="kr.or.dgit.erp_luuzun.dao.SaleMapper.SaleResult"/>
+    	<collection property="sale" resultMap="kr.or.dgit.erp_luuzun.dao.SaleMapper.SaleResult" />
     </resultMap>
     
 	<!-- Select SQL -->
     <sql id="selectSQL">
-		SELECT DISTINCT * FROM software sw
+		<!-- SELECT DISTINCT * FROM software sw
 			LEFT OUTER JOIN delivery del ON sw.sw_code = del.sw_code
 			LEFT OUTER JOIN supply_company sc ON sc.comp_code = del.comp_code
 			LEFT OUTER JOIN category cat ON sw.group_code = cat.group_code
 			LEFT OUTER JOIN sale s ON sw.sw_code = s.sw_code
-			LEFT OUTER JOIN view_sale_detail sd ON s.sale_code = sd.sale_code;
+			LEFT OUTER JOIN view_sale_detail sd ON s.sale_code = sd.sale_code; -->
+		SELECT sw.sw_name, del.del_code, s.sale_code, cat.group_name, sc.comp_name, sd.total_supply_price FROM software sw
+			JOIN delivery del ON sw.sw_code = del.sw_code
+			JOIN supply_company sc ON sc.comp_code = del.comp_code
+			JOIN category cat ON sw.group_code = cat.group_code
+			JOIN sale s ON sw.sw_code = s.sw_code
+			JOIN view_sale_detail sd ON s.sale_code = sd.sale_code;
 	</sql>
 
     <!-- Select By All --> 
