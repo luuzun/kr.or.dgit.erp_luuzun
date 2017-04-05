@@ -29,8 +29,8 @@ dependencies {
 }
 
 jar {
-	//mainClassName = 'kr.or.dgit.erp_luuzun.MainApp'
-	mainClassName = 'kr.or.dgit.erp_luuzun.TestMain'
+	mainClassName = 'kr.or.dgit.erp_luuzun.MainApp'
+	//mainClassName = 'kr.or.dgit.erp_luuzun.TestMain'
 	baseName = 'SoftWareERPApp'
 	appendix = 'bin'
 	version = 1.0
