@@ -8,7 +8,7 @@
 	</resultMap>
 	 
 	<!-- Select SQL -->
-    <sql id="selectSQL">
+	<sql id="selectSQL">
 		SELECT group_code, group_name FROM category
 	</sql>
 
@@ -22,9 +22,33 @@
 	</sql>
 	    
     <!-- Select By All --> 
-    <select id="selectCategoryByAll" resultMap="CategoryResult">
-    	<include refid="selectSQL" />
-    		ORDER BY group_code;
-    </select>
+	<select id="selectCategoryByAll" resultMap="CategoryResult">
+		<include refid="selectSQL" />
+	</select>
+
+	<!-- Select by No -->
+	<select id="selectCategoryByNo" parameterType="Category" resultMap="CategoryResult">
+		<include refid="selectSQL"/>
+		<include refid="whereSQL"/>
+	</select>
+	
+	<!-- Insert Category -->
+	<insert id="insertCategoryItem" parameterType="Category">
+		INSERT INTO category(group_code, group_name) 
+			VALUES (#{groupCode}, #{groupName})
+	</insert>
+	
+	<!-- Update Item -->
+	<update id="updateCategoryItem" parameterType="Category">
+		UPDATE category SET group_code=#{groupCode}, group_name=#{groupName} 
+			<include refid="whereSQL"/>
+	</update>
+	
+	<!-- Delete item -->
+	<delete id="deleteCategoryItem" parameterType="Category">
+		DELETE FROM category 
+			<include refid="whereSQL"/>
+	</delete>
+	
 </mapper>
 

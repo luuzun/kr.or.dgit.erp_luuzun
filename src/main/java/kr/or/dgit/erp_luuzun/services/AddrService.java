@@ -10,7 +10,7 @@ import kr.or.dgit.erp_luuzun.dto.Address;
 import kr.or.dgit.erp_luuzun.util.MyBatisSqlSessionFactory;
 
 public class AddrService {
-	//private AddrService() {}
+	private AddrService() {}
 	public static final AddrService instance = new AddrService();
 	public static AddrService getInstance() {
 		return instance;

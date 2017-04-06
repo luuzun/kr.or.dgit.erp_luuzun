@@ -21,4 +21,38 @@ public class ClientService {
 			return clientMapper.selectClientByAll();
 		} 
 	}
+	
+	public Client selectByNoClnt(Client client) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			ClientMapper clientMapper = new ClientMapperImpl(sqlSession);
+			return clientMapper.selectClntByNo(client);
+		} 
+	}
+
+	public int insetClntItem(Client client) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			ClientMapper clientMapper = new ClientMapperImpl(sqlSession);
+			int res= clientMapper.insetClntItem(client);
+			sqlSession.commit();
+			return res;
+		} 
+	}
+
+	public int updateClntItem(Client client) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			ClientMapper clientMapper = new ClientMapperImpl(sqlSession);
+			int res= clientMapper.updateClntItem(client);
+			sqlSession.commit();
+			return res;
+		} 
+	}
+
+	public int existClntItem(Client client) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			ClientMapper clientMapper = new ClientMapperImpl(sqlSession);
+			int res= clientMapper.existClntItem(client);
+			sqlSession.commit();
+			return res;
+		} 
+	}
 }

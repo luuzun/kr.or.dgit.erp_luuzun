@@ -21,4 +21,39 @@ public class SupplyCompService {
 			return supplyCompMapper.selectSupplyCompByAll();
 		} 
 	}
+	
+
+	public SupplyCompany selectCompByNo(SupplyCompany supplyCompany) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			SupplyCompMapper supplyCompMapper = new SupplyCompMapperImpl(sqlSession);
+			return supplyCompMapper.selectCompByNo(supplyCompany);
+		} 
+	}
+
+	public int insertCompItem(SupplyCompany supplyCompany) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			SupplyCompMapper supplyCompMapper = new SupplyCompMapperImpl(sqlSession);
+			int res= supplyCompMapper.insertCompItem(supplyCompany);
+			sqlSession.commit();
+			return res;
+		} 
+	}
+
+	public int updateCompItem(SupplyCompany supplyCompany) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			SupplyCompMapper supplyCompMapper = new SupplyCompMapperImpl(sqlSession);
+			int res= supplyCompMapper.updateCompItem(supplyCompany);
+			sqlSession.commit();
+			return res;
+		} 
+	}
+
+	public int existCompItem(SupplyCompany supplyCompany) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			SupplyCompMapper supplyCompMapper = new SupplyCompMapperImpl(sqlSession);
+			int res= supplyCompMapper.existCompItem(supplyCompany);
+			sqlSession.commit();
+			return res;
+		} 
+	}
 }

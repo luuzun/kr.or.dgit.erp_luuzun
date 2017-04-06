@@ -6,9 +6,7 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
 
-import kr.or.dgit.erp_luuzun.dto.Address;
 import kr.or.dgit.erp_luuzun.dto.JoinFromSale;
-import kr.or.dgit.erp_luuzun.dto.SupplyCompany;
 
 public class JoinFromSaleMapperImpl implements JoinFromSaleMapper{
 	private SqlSession sqlSession;

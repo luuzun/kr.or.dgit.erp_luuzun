@@ -21,4 +21,33 @@ public class CategoryService {
 			return categoryMapper.selectCategoryByAll();
 		} 
 	}
+	
+
+	public Category selectCategoryByNo(Category category) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			CategoryMapper categoryMapper = new CategoryMapperImpl(sqlSession);
+			return categoryMapper.selectCategoryByNo(category);
+		} 
+	}
+
+	public int insertCategoryItem(Category category) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			CategoryMapper categoryMapper = new CategoryMapperImpl(sqlSession);
+			return categoryMapper.insertCategoryItem(category);
+		} 
+	}
+	
+	public int updateCategoryItem(Category category) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			CategoryMapper categoryMapper = new CategoryMapperImpl(sqlSession);
+			return categoryMapper.updateCategoryItem(category);
+		} 
+	}
+
+	public int deleteCategoryItem(Category category) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlSessionFactory().openSession();) {
+			CategoryMapper categoryMapper = new CategoryMapperImpl(sqlSession);
+			return categoryMapper.deleteCategoryItem(category);
+		} 
+	}
 }

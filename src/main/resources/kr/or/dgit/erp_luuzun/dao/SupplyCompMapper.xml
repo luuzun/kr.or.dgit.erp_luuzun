@@ -7,19 +7,19 @@
     	<result property="compName" column="comp_name"/>
     	<result property="compTel" column="comp_tel"/>
     	<result property="compIsExist" column="comp_isExist"/>
-    	<association property="address" resultMap="kr.or.dgit.erp_luuzun.dao.AddrMapper.AddrResult"/>
+		<association property="address" resultMap="kr.or.dgit.erp_luuzun.dao.AddrMapper.AddrResult"/>
     </resultMap>
     
 	<!-- Select SQL -->
     <sql id="selectSQL">
-		SELECT * FROM supply_company 
+		SELECT comp_code,comp_name,comp_tel,comp_isExist,comp_addr FROM supply_company 
 	</sql>
 
 	<!-- Where SQL -->
 	<sql id="whereSQL">
 		<where>
 			<if test="compCode != null">
-				WHERE comp_code=#{compCode};
+				comp_code=#{compCode};
 			</if>
 		</where>
 	</sql>
@@ -29,5 +29,30 @@
     	<include refid="selectSQL" />
     		ORDER BY comp_code;
     </select>
+    
+   	<!-- Select By NO -->
+    <select id="selectCompByNo" parameterType="SupplyCompany" resultMap="SupplyCompanyResult">
+		<include refid="selectSQL"/>
+		<include refid="whereSQL"/>
+	</select>
+	
+	<!-- Insert Item -->
+	<insert id="insertCompItem" parameterType="SupplyCompany">
+		INSERT INTO supply_company (comp_code, comp_name, comp_addr, comp_tel, comp_isExist)
+		VALUES (#{compCode},#{compName},#{compAddr},#{compTel},#{compIsExist})
+	</insert>
+	
+	<!-- Update Item -->
+	<update id="updateCompItem" parameterType="SupplyCompany">
+		UPDATE supply_company
+		SET comp_name=#{compName}, comp_addr=#{compAddr}, comp_tel=#{compTel}, comp_isExist=#{compIsExist} 
+		WHERE comp_code=#{compCode}
+	</update>
+	
+	<!-- Exist Item -->
+	<update id="existCompItem" parameterType="SupplyCompany">
+		UPDATE supply_company SET comp_isExist=FALSE WHERE comp_code=#{compCode}
+	</update>
+    
 </mapper>
 

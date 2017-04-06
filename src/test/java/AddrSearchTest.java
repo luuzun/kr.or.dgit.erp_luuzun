@@ -11,17 +11,10 @@ import kr.or.dgit.erp_luuzun.dto.Address;
 import kr.or.dgit.erp_luuzun.services.AddrService;
 
 public class AddrSearchTest {
-	private static AddrService addrService;
-
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		addrService = new AddrService();
-	}
-
+	public static void setUpBeforeClass() throws Exception {}
 	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		addrService= null;
-	}
+	public static void tearDownAfterClass() throws Exception {}
 
 	//Search Address Test
 	@Test
@@ -33,7 +26,7 @@ public class AddrSearchTest {
 		address.setBuilding1(17);
 		address.setBuilding2(0);
 		List<Address> list= new ArrayList<>();
-		list = addrService.searchSido(address);
+		list = AddrService.getInstance().searchSido(address);
 		
 		List<Address> emplist = Collections.emptyList();
 		Assert.assertNotEquals(emplist, list);

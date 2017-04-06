@@ -7,8 +7,8 @@
     	<association property="supplyCompany" resultMap="kr.or.dgit.erp_luuzun.dao.SupplyCompMapper.SupplyCompanyResult"/>
     	<association property="category" resultMap="kr.or.dgit.erp_luuzun.dao.CategoryMapper.CategoryResult"/>
     	<association property="saleDetail" resultMap="kr.or.dgit.erp_luuzun.dao.SaleDetailMapper.SaleDetailResult"/>
-    	<association property="delivery" resultMap="kr.or.dgit.erp_luuzun.dao.DeliveryMapper.DeliveryResult"/>
-    	<association property="sale" resultMap="kr.or.dgit.erp_luuzun.dao.SaleMapper.SaleResult" />
+    	<collection property="delivery" resultMap="kr.or.dgit.erp_luuzun.dao.DeliveryMapper.DeliveryResult"/>
+    	<collection property="sale" resultMap="kr.or.dgit.erp_luuzun.dao.SaleMapper.SaleResult" />
     </resultMap>
     
 	<!-- Select SQL -->

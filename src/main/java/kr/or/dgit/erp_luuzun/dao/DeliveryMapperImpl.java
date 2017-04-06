@@ -6,9 +6,7 @@ import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
 
-import kr.or.dgit.erp_luuzun.dto.Address;
 import kr.or.dgit.erp_luuzun.dto.Delivery;
-import kr.or.dgit.erp_luuzun.dto.SupplyCompany;
 
 public class DeliveryMapperImpl implements DeliveryMapper{
 	private SqlSession sqlSession;

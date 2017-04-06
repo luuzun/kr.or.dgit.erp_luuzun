@@ -37,5 +37,32 @@
     <select id="selectSaleByAll" resultMap="SaleResult">
     	<include refid="selectSQL" />
     </select>
+    
+     <!-- Select By No --> 
+    <select id="selectSaleByNo" resultMap="SaleResult">
+    	<include refid="selectSQL" />
+    	<include refid="whereSQL"/>
+    </select>
+    
+    <!-- Insert Item -->
+    <insert id="insertSaleItem">
+    	INSERT INTO sale(sale_code, clnt_code, sw_code, sale_amount, isdeposit, order_date, supply_price, sale_price, sale_isExist) VALUES  
+	    (#{saleCode},#{clntCode},#{swCode},#{saleAmount}, #{isdeposit}, #{orderDate}, #{supplyPrice}  , #{salePrice},   TRUE);
+    </insert>
+    
+    <!-- Update Item -->
+    <update id="updateSaleItem">
+    	UPDATE sale
+		SET sale_code=#{saleCode},clnt_code=#{clntCode}, sw_code=#{swCode}, sale_amount=#{saleAmount}, isdeposit=#{isdeposit}, 
+		order_date=#{orderDate}, supply_price=#{supplyPrice}, sale_price=#{salePrice}, sale_isExist=#{saleIsExist}
+		WHERE sale_code=#{saleCode};
+     </update>
+     
+     <!-- Exist item -->
+     <update id="existSaleItem">
+     	UPDATE sale
+		SET sale_isExist=#{saleIsExist}
+		WHERE sale_code=#{saleCode};
+     </update>
 </mapper>
 

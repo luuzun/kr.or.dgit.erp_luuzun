@@ -7,7 +7,7 @@
 		<result property="clntName" column="clnt_name"/>
 		<result property="clntTel" column="clnt_tel"/>
 		<result property="clntIsExist" column="clnt_isExist"/>
-	   	<association property="address" resultMap="kr.or.dgit.erp_luuzun.dao.AddrMapper.AddrResult"/>
+		<association property="address" column="clnt_addr" resultMap="kr.or.dgit.erp_luuzun.dao.AddrMapper.AddrResult"/>
 	</resultMap>
 	 
 	<!-- Select SQL -->
@@ -28,7 +28,37 @@
     <!-- Select By All --> 
     <select id="selectClientByAll" resultMap="ClientResult">
     	<include refid="selectSQL" />
-    		ORDER BY clnt_code;
+    		ORDER BY clnt_code
     </select>
+    
+    <!-- Select By No-->
+    <select id="selectClntByNo" parameterType="Client" resultMap="ClientResult">
+		<include refid="selectSQL"/>
+		<include refid="whereSQL"></include>
+	</select>
+	
+	<!-- Insert Item -->
+	<insert id="insetClntItem" parameterType="Client">
+		INSERT INTO client(clnt_code,clnt_name,clnt_tel,clnt_addr,clnt_isExist) 
+			VALUES (#{clntCode},#{clntName},#{clntTel},#{address},true)
+	</insert>
+	
+	<!-- Update Item -->
+	<update id="updateClntItem" parameterType="Client">
+		UPDATE client
+		<set>
+			<if test="clntCode != null">clnt_code=#{clntCode},</if>
+			<if test="clntName != null">clnt_name=#{clntName},</if>
+			<if test="address != null">clnt_addr=#{address},</if>
+			<if test="clntTel != null">clnt_tel=#{clntTel},</if>
+			<if test="clntIsExist != null">clnt_isExist=true</if>
+		</set>
+		<include refid="whereSQL"/>
+	</update>
+	
+	<!-- Not Exist item -->
+	<update id="existClntItem" parameterType="Client">
+		UPDATE client SET clnt_isExist=FALSE WHERE clnt_code=#{clntCode}
+	</update>
 </mapper>
 

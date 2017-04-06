@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 import kr.or.dgit.erp_luuzun.dao.DeliveryMapper;
 import kr.or.dgit.erp_luuzun.dao.DeliveryMapperImpl;
 import kr.or.dgit.erp_luuzun.dto.Delivery;
-import kr.or.dgit.erp_luuzun.dto.SupplyCompany;
 import kr.or.dgit.erp_luuzun.util.MyBatisSqlSessionFactory;
 public class DeliveryService {
 	public static final DeliveryService instance = new DeliveryService();
